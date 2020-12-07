@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+.ui {
+    width: 40%;
+    height: 750px;
+    margin: 1rem auto;
+    background: rgb(210, 158, 245);
+    box-shadow: 0 0 10px black;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.output {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 90%;
+    overflow: scroll;
+}
+
+.uplord-data {
+    border: 2px solid white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    border-radius: 5px;
+}
+
+.img {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 2rem;
+    border-radius: 50%;
+}
+
+.name {
+    color: rgb(9, 23, 221);
+    font-size: 1rem;
+}
+
+.t-d {
+    font-size: 0.8rem;
+}
+
+.time {
+    color: gray;
+    margin-right: 1rem;
+}
+
+.delete {
+    color: red;
+}
+
+.btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+}
+
+.btn button {
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    background: rgb(206, 165, 245);
+    font-size: 1rem;
+    color: white;
+}
+
+.btn button:hover {
+    background: rgb(255, 255, 255);
+    color: gray;
+}
+
+.text-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    height: 50%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    resize: none;
+    color: white;
+    background: rgba(162, 99, 221, 0.7);
+}
+
+.text-box p {
+    height: 50%;
+}
+
+.text-box input {
+    width: 100px;
+    height: 50px;
+    font-size: 1rem;
+    background: rgb(233, 185, 255);
+    color: white;
+}
+
+.text-box input:hover {
+    background: white;
+    color: gray;
+}
+
+.out {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 20px;
+    width: 80px;
+    background: white;
+    border-radius: 3px;
+}
+
+.out a {
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+}
