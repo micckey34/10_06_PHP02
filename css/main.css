@@ -6,8 +6,12 @@
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 .ui {
-    width: 40%;
+    width: 50%;
     height: 750px;
     margin: 1rem auto;
     background: rgb(210, 158, 245);
@@ -19,45 +23,92 @@
 }
 
 .output {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 90%;
     overflow: scroll;
+    height: 90%;
 }
 
 .uplord-data {
-    border: 2px solid white;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    display: flex;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
 }
 
-.img {
+.prof {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prof img {
     width: 4rem;
     height: 4rem;
-    margin: 0 2rem;
     border-radius: 50%;
 }
 
-.name {
-    color: rgb(9, 23, 221);
-    font-size: 1rem;
+.prof p {
+    color: rgb(92, 43, 226);
 }
 
-.t-d {
-    font-size: 0.8rem;
+.reply {
+    color: rgb(251, 255, 0);
+}
+
+.text {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    width: 100%;
+    font-size: 1.4rem;
 }
 
 .time {
+    width: 100%;
+    font-size: 1rem;
     color: gray;
-    margin-right: 1rem;
 }
 
 .delete {
+    width: 100%;
+    font-size: 1rem;
     color: red;
+}
+
+.re-btn {
+    color: white;
+    background: rgb(92, 43, 226);
+    border: none;
+    width: 40px;
+    border-radius: 2px;
+}
+
+.good {
+    font-size: 1.4rem;
+    float: right;
+}
+
+.reply-box {
+    height: 120px;
+}
+
+.reply-box textarea {
+    height: 90px;
+}
+
+.reply-box p {
+    height: 30px;
+    text-align: right;
+}
+
+.reply-box button {
+    height: 30px;
+    width: 80px;
+    margin-right: 1rem;
 }
 
 .btn {

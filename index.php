@@ -23,7 +23,7 @@
                 <p><input type="file" name="image"></p>
                 <p><input type="submit" value="確認" class="check"></p>
             </form>
-            <p><a href="login.php"></a></p>
+            <a href="login.php" class="top-login">ログイン</a>
         </div>
     </div>
 </body>
