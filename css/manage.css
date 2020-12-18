@@ -6,25 +6,99 @@
     text-decoration: none;
 }
 
-button {
-    cursor: pointer;
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 5rem;
+    background: azure;
+}
+
+h1 {
+    height: 10%;
 }
 
 .ui {
-    width: 50%;
-    height: 750px;
-    margin: 1rem auto;
-    background: rgb(210, 158, 245);
-    box-shadow: 0 0 10px black;
-    border-radius: 5px;
-    position: relative;
+    width: 100%;
+    height: 90%;
     display: flex;
-    flex-direction: column;
+}
+
+.users {
+    width: 50%;
+    height: 100%;
+}
+
+.user-list {
+    height: 95%;
+    overflow: scroll;
+}
+
+.user {
+    border: 2px solid black;
+    width: 80%;
+    margin: 0 1rem 1rem 1rem;
+}
+
+summary {
+    font-size: 1.5rem;
+    border-bottom: 2px solid black;
+}
+
+.user img {
+    width: 8rem;
+    margin: 1rem;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 1rem;
+}
+
+th {
+    text-align: left;
+    margin-right: 1rem;
+}
+
+.acount {
+    width: 80%;
+    margin: 0 1rem;
+}
+
+.acount a {
+    color: blue;
+}
+
+.out {
+    height: 5%;
+    width: 80%;
+    margin: 0 1rem;
+}
+
+.out a {
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    background: gray;
+}
+
+.time-line {
+    width: 50%;
+    height: 100%;
+    border: 2px solid black;
 }
 
 .output {
+    width: 100%;
+    height: 80%;
     overflow: scroll;
-    height: 90%;
 }
 
 .uplord-data {
@@ -53,7 +127,7 @@ button {
 }
 
 .reply {
-    color: rgb(251, 255, 0);
+    color: rgb(92, 66, 240);
 }
 
 .text {
@@ -100,6 +174,7 @@ button {
 
 .reply-box textarea {
     height: 90px;
+    width: 100%;
 }
 
 .reply-box p {
@@ -113,77 +188,23 @@ button {
     margin-right: 1rem;
 }
 
-.btn {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 10%;
-    text-align: center;
-}
-
-.btn button {
-    width: 100px;
-    height: 50px;
-    margin: 0 auto;
-    background: rgb(206, 165, 245);
-    font-size: 1rem;
-    color: white;
-}
-
-.btn button:hover {
-    background: rgb(255, 255, 255);
-    color: gray;
-}
-
 .text-box {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: 20%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 
-textarea {
+.text-box form {
+    height: 100%;
+}
+
+.text-box textarea {
+    height: 75%;
     width: 100%;
-    height: 50%;
     padding: 1rem;
-    font-size: 1.4rem;
     resize: none;
-    color: white;
-    background: rgba(162, 99, 221, 0.7);
 }
 
-.text-box p {
-    height: 50%;
-}
-
-.text-box input {
-    width: 100px;
-    height: 50px;
-    font-size: 1rem;
-    background: rgb(233, 185, 255);
-    color: white;
-}
-
-.text-box input:hover {
-    background: white;
-    color: gray;
-}
-
-.out {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    height: 20px;
-    width: 80px;
-    background: white;
-    border-radius: 3px;
-}
-
-.out a {
-    display: block;
-    font-size: 15px;
-    line-height: 20px;
+.text-box button {
+    height: 20%;
+    width: 100%;
 }

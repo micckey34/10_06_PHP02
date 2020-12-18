@@ -20,11 +20,11 @@
 
 .prof {
     width: 100%;
-    height: 25%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .prof img {
@@ -38,9 +38,13 @@
     color: rgb(92, 43, 226);
 }
 
+.prof a {
+    color: azure;
+}
+
 .output {
     overflow: scroll;
-    height: 70%;
+    height: 65%;
 }
 
 .uplord-data {

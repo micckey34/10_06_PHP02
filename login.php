@@ -17,7 +17,7 @@
             <p>PASSWORD</p>
             <p><input type="password" name="password"></p>
             <p class="check"><input type="submit" value="ログイン" class="check"></p>
-            <p><a href="index.php">登録はこちら</a></p>
+            <p><a href="top.php">登録はこちら</a></p>
         </form>
     </div>
 </body>

@@ -13,6 +13,11 @@ $name = $member['name'];
 $img = $member['picture'];
 
 $posts = $db->prepare('SELECT * FROM posts WHERE member_id=? ORDER BY created DESC');
+// $posts = $db->query('SELECT * FROM members  as m 
+// LEFT OUTER JOIN  posts as p ON m.id = p.member_id
+// LEFT OUTER JOIN  (SELECT message_id, COUNT(id) AS cnt FROM likes GROUP BY message_id) as l ON p.id = l.message_id 
+// WHERE member_id=?
+// ORDER BY p.created DESC');
 $posts->execute(array($id));
 
 
@@ -33,6 +38,9 @@ $posts->execute(array($id));
         <div class="prof">
             <img src="<?= $img ?>" alt="">
             <p class="name"><?= $name ?></p>
+            <?php if ($_GET['member_id'] == $_SESSION['id']) : ?>
+                <a href="acount.php?id=<?= $_SESSION['id'] ?>">プロフィールの編集</a>
+            <?php endif; ?>
         </div>
         <div class="output">
             <?php foreach ($posts as $post) : ?>

@@ -15,14 +15,21 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 3600 > time()) {
     header('location:login.php');
     exit();
 }
+
+if ($member['is_admin'] == 1) {
+    header('location:management.php');
+};
 $myid = htmlspecialchars($member['id'], ENT_QUOTES);
 $myname = htmlspecialchars($member['name'], ENT_QUOTES);
 $myimage = htmlspecialchars($member['picture'], ENT_QUOTES);
 
 
 
-$posts = $db->query('SELECT m.name,m.picture,p.* FROM members m , posts p 
-WHERE m.id=p.member_id ORDER BY p.created DESC');
+
+$posts = $db->query('SELECT * FROM members as m 
+LEFT OUTER JOIN  posts as p ON m.id = p.member_id
+LEFT OUTER JOIN  (SELECT message_id, COUNT(id) AS cnt FROM likes GROUP BY message_id) as l ON p.id = l.message_id
+ORDER BY p.created DESC');
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -44,7 +51,7 @@ WHERE m.id=p.member_id ORDER BY p.created DESC');
                 $name = htmlspecialchars($post['name'], ENT_QUOTES);
                 $message = htmlspecialchars($post['message'], ENT_QUOTES);
                 $created = htmlspecialchars($post['created'], ENT_QUOTES);
-                $good = htmlspecialchars($post['good'], ENT_QUOTES);
+                $good = htmlspecialchars($post['cnt'], ENT_QUOTES);
                 $reply_source = htmlspecialchars($post['reply_source'], ENT_QUOTES);
                 ?>
                 <div class="uplord-data">
@@ -63,7 +70,7 @@ WHERE m.id=p.member_id ORDER BY p.created DESC');
                             <?php if ($_SESSION['id'] == $post['member_id']) : ?>
                                 [<span><a href="delete.php?id=<?= $id ?>" class="delete">削除</a></span>]
                             <?php endif; ?>
-                            <span class="good">(<?= $good ?>)<a href="good.php?id=<?= $id ?>">👍</a></span>
+                            <span class="good"><?= $good ?><a href="good.php?id=<?= $id ?>&member_id=<?= $myid ?>">👍</a></span>
                         </p>
                     </div>
                 </div>
@@ -91,7 +98,7 @@ WHERE m.id=p.member_id ORDER BY p.created DESC');
         </div>
         <div class="btn">
             <button id="up">投稿する</button>
-            <div class="out"><a href="login.php">log out</a></div>
+            <div class="out"><a href="logout.php">log out</a></div>
         </div>
         <form action="upload.php" method="POST" class="text-box" id="text-box">
             <textarea name="message" id="" cols="30" rows="10"></textarea>
